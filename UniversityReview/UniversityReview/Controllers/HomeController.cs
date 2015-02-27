@@ -22,6 +22,8 @@ namespace UniversityReview.Controllers
             //aidiotn feature 1 change
             //feature 1.1change
             //command change
+
+            //change after push
             return View();
         }
 
