@@ -10,11 +10,31 @@ namespace UniversityReview.Controllers
     public class HomeController : Controller
     {
         UniRatingDB _db = new UniRatingDB();
-        public ActionResult Index()
+        public ActionResult Index(string searchTerm = null)
         {
            // ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
-            var model = _db.Universities.ToList();
+            var model =
+                          _db.Universities
+                             .OrderByDescending(r => r.Reviews.Average(review => review.Rating))
+                             .Where(r => searchTerm == null || r.Name.StartsWith(searchTerm))
+
+                             .Select(r => new UniversityListViewModel
+                             {
+                                 Id = r.Id,
+                                 Name = r.Name,
+                                 City = r.City,
+
+                                 CountOfReviews = r.Reviews.Count()
+                             });
+
+
+            //if (Request.IsAjaxRequest())
+            //{
+            //    return PartialView("_University", model);
+            //}
+
             return View(model);
+       
         }
 
         public ActionResult About()
