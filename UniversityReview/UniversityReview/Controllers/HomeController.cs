@@ -28,10 +28,10 @@ namespace UniversityReview.Controllers
                              });
 
 
-            //if (Request.IsAjaxRequest())
-            //{
-            //    return PartialView("_University", model);
-            //}
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_University", model);
+            }
 
             return View(model);
        
