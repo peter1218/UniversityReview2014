@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -21,6 +22,41 @@ namespace UniversityReview.Controllers
                 return View(university);
             }
             return HttpNotFound();
+        }
+
+        [HttpGet]
+        public ActionResult Create(int UniversityId)
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Create(UniversityReviews review)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Reviews.Add(review);
+                _db.SaveChanges();
+                return RedirectToAction("Index", new { id = review.UniversityId });
+            }
+            return View(review);
+        }
+        [HttpPost]
+        public ActionResult Edit(UniversityReviews review)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Entry(review).State = EntityState.Modified;
+
+                _db.SaveChanges();
+                return RedirectToAction("Index", new { id = review.UniversityId });
+            }
+            return View(review);
+        }
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            var model = _db.Reviews.Find(id);
+            return View(model);
         }
           protected override void Dispose(bool disposing)
         {
