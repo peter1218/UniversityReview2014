@@ -1,9 +1,10 @@
-﻿@using UniversityReview.Models;
-@model IEnumerable<UniversityListViewModel>
+﻿@model IPagedList<UniversityListViewModel>
 @{
     ViewBag.Title = "Home Page";
 }
-@using (Ajax.BeginForm(
+
+
+@*@using (Ajax.BeginForm(
 
         new AjaxOptions
         {
@@ -14,30 +15,16 @@
 
 
         ))
-{
+    {
 
         <input type="search" name="searchTerm" />
-        <input type="submit" value="Search By Name" />
-
-}
+        <input type="submit" value="Search By Name" />*@
 
 
-@*<form method="get" >
+<form method="get" action="@Url.Action("Index")" data-uni-ajax="true" data-uni-target="#UniversityList">
 
-    <input type="search" name="searchTerm"  />
+    <input type="search" name="searchTerm" data-uni-autocomplete="@Url.Action("AutoComplete")" />
     <input type="submit" value="Search By Name" />
 
-</form>*@
-
+</form>
 @Html.Partial("_University", Model)
-
-@*@foreach (var item in Model)
-{
-    <div>
-        <h4>
-            @item.Name
-        </h4>
-        <div>@item.City</div>
-
-    </div>
-}*@
