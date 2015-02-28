@@ -188,6 +188,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\UniRatingDB.cs" />
+    <Compile Include="Models\University.cs" />
+    <Compile Include="Models\UniversityReview.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
