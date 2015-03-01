@@ -8,13 +8,13 @@ using System.Web.Security;
 using DotNetOpenAuth.AspNet;
 using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
-using UniversityReview.Filters;
+//using UniversityReview.Filters;
 using UniversityReview.Models;
 
 namespace UniversityReview.Controllers
 {
     [Authorize]
-    [InitializeSimpleMembership]
+   
     public class AccountController : Controller
     {
         //
@@ -263,7 +263,7 @@ namespace UniversityReview.Controllers
             if (ModelState.IsValid)
             {
                 // Insert a new user into the database
-                using (UsersContext db = new UsersContext())
+                using (var db = new UniRatingDB())
                 {
                     UserProfile user = db.UserProfiles.FirstOrDefault(u => u.UserName.ToLower() == model.UserName.ToLower());
                     // Check if user already exists

@@ -15,7 +15,7 @@ namespace UniversityReview.Models
         {
 
         }
-        //public DbSet<UserProfile> UserProfiles { get; set; }
+        public DbSet<UserProfile> UserProfiles { get; set; }
         public DbSet<University> Universities { get; set; }
         public DbSet<UniversityReviews> Reviews { get; set; }
     }
