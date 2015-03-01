@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using UniversityReview.Models;
 using PagedList;
+using System.Web.UI;
 namespace UniversityReview.Controllers
 {
     public class HomeController : Controller
@@ -23,7 +24,7 @@ namespace UniversityReview.Controllers
             return Json(model, JsonRequestBehavior.AllowGet);
 
         }
-
+        [OutputCache(CacheProfile = "Long", VaryByHeader = "X-Requested-With;Accept-Language", Location = OutputCacheLocation.Server)]
         public ActionResult Index(string searchTerm = null,int page=1)
         {
            // ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
