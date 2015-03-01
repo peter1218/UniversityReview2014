@@ -28,7 +28,7 @@ namespace UniversityReview.Controllers
 
         //
         // GET: /University/Create
-
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -38,6 +38,8 @@ namespace UniversityReview.Controllers
         // POST: /University/Create
 
         [HttpPost]
+        [Authorize(Roles="Admin")]
+
         [ValidateAntiForgeryToken]
         public ActionResult Create(University university)
         {
