@@ -55,7 +55,7 @@ namespace UniversityReview.Controllers
 
         //
         // GET: /University/Edit/5
-
+         
         public ActionResult Edit(int id = 0)
         {
             University university = db.Universities.Find(id);
@@ -71,6 +71,7 @@ namespace UniversityReview.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+       
         public ActionResult Edit(University university)
         {
             if (ModelState.IsValid)
@@ -84,7 +85,7 @@ namespace UniversityReview.Controllers
 
         //
         // GET: /University/Delete/5
-
+         [Authorize(Roles = "Admin")]
         public ActionResult Delete(int id = 0)
         {
             University university = db.Universities.Find(id);
@@ -97,7 +98,7 @@ namespace UniversityReview.Controllers
 
         //
         // POST: /University/Delete/5
-
+         [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
