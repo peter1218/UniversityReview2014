@@ -8,6 +8,15 @@ namespace UniversityReview.Migrations
         public override void Up()
         {
             CreateTable(
+                "dbo.UserProfile",
+                c => new
+                    {
+                        UserId = c.Int(nullable: false, identity: true),
+                        UserName = c.String(),
+                    })
+                .PrimaryKey(t => t.UserId);
+            
+            CreateTable(
                 "dbo.Universities",
                 c => new
                     {
@@ -23,7 +32,7 @@ namespace UniversityReview.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Rating = c.Int(nullable: false),
-                        Body = c.String(),
+                        Body = c.String(nullable: false, maxLength: 1024),
                         ReviewerName = c.String(),
                         UniversityId = c.Int(nullable: false),
                     })
@@ -39,6 +48,7 @@ namespace UniversityReview.Migrations
             DropForeignKey("dbo.UniversityReviews", "UniversityId", "dbo.Universities");
             DropTable("dbo.UniversityReviews");
             DropTable("dbo.Universities");
+            DropTable("dbo.UserProfile");
         }
     }
 }

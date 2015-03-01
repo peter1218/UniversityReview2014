@@ -11,7 +11,7 @@ namespace UniversityReview.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201502281809118_InitialCreate"; }
+            get { return "201503010641463_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source
