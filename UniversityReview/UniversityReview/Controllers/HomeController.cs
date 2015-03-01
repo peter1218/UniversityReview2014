@@ -27,7 +27,7 @@ namespace UniversityReview.Controllers
         [OutputCache(CacheProfile = "Long", VaryByHeader = "X-Requested-With;Accept-Language", Location = OutputCacheLocation.Server)]
         public ActionResult Index(string searchTerm = null,int page=1)
         {
-           // ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+           
             var model =
                           _db.Universities
                              .OrderByDescending(r => r.Reviews.Average(review => review.Rating))
@@ -55,13 +55,7 @@ namespace UniversityReview.Controllers
         public ActionResult About()
         {
             ViewBag.Message = "This university rating and reviews system is developed by Peter Liu";
-            //123
-            //aidiotn feature 1 change
-            //feature 1.1change
-            //command change
-
-            //change after push
-            //more change after push
+          
             return View();
         }
 
