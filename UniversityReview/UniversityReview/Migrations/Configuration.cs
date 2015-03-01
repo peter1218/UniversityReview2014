@@ -31,24 +31,18 @@ namespace UniversityReview.Migrations
             //    );
             //
             context.Universities.AddOrUpdate(r => r.Name,
-          new University { Name = "Flinders Uni", City = "Adelaide" },
-          new University { Name = "Adelaide Uni", City = "Adelaide" },
+          new University { Name = "Flinders University", City = "Adelaide" },
+          new University { Name = "Adelaide University", City = "Adelaide" },
           new University
           {
-              Name = "Sydney Uni",
+              Name = "Sydney University",
               City = "Sydney",
 
               Reviews =
                   new List<UniversityReviews> { 
-                       new UniversityReviews { Rating = 9, Body="Great University", ReviewerName="peter" }
+                       new UniversityReviews { Rating = 95, Body="Great University", ReviewerName="peter" }
                    }
           });
-
-            for (int i = 0; i < 1000; i++)
-            {
-                context.Universities.AddOrUpdate(r => r.Name,
-                    new University { Name = i.ToString(), City = "Nowhere" });
-            }
 
            SeedMembership();
 
