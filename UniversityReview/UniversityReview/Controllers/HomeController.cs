@@ -54,7 +54,7 @@ namespace UniversityReview.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your app description page.";///
+            ViewBag.Message = "This university rating and reviews system is developed by Peter Liu";
             //123
             //aidiotn feature 1 change
             //feature 1.1change
@@ -67,7 +67,7 @@ namespace UniversityReview.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "My contact details";
 
             return View();
         }
