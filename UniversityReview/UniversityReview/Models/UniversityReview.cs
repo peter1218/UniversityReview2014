@@ -8,6 +8,7 @@ namespace UniversityReview.Models
 {
     public class UniversityReviews
     {
+        //4343434343
         public int Id { get; set; }
         [Range(1, 100)]
         [Required]
