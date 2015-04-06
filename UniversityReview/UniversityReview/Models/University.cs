@@ -7,6 +7,7 @@ namespace UniversityReview.Models
 {
     public class University
     {
+        //peter
         public int Id { get; set; }
         public string Name{get;set;}
         public string City{get;set;}
