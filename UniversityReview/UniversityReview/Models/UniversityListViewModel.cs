@@ -7,7 +7,7 @@ namespace UniversityReview.Models
 {
     public class UniversityListViewModel
     {
-        //hello 2
+        //hello 3 added
         public int Id { get; set; }
         public string Name { get; set; }
         public string City { get; set; }
