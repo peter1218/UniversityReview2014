@@ -13,7 +13,7 @@ namespace UniversityReview.Controllers
         UniRatingDB _db = new UniRatingDB();
         //
         // GET: /Reviews/
-
+        //22
         public ActionResult Index([Bind(Prefix = "id")] int restaurantId)
         {
             var university = _db.Universities.Find(restaurantId);
