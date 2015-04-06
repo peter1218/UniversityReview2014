@@ -10,6 +10,7 @@ namespace UniversityReview.Models
         //peter
         //feature 2.2 created
         //feature 2.2
+        // master c hange added
         public int Id { get; set; }
         public string Name{get;set;}
         public string City{get;set;}
