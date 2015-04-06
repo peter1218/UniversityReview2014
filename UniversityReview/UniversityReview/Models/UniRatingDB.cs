@@ -9,7 +9,7 @@ namespace UniversityReview.Models
     public class UniRatingDB : DbContext
     {
        
-
+        //hello
         public UniRatingDB()
             : base("name=DefaultConnection")
         {
