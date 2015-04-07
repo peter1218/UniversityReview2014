@@ -31,6 +31,70 @@ namespace UniversityReview.Controllers
 
 
 
+
+    //public partial class TestCase3 : System.Web.UI.Page
+    //{
+    //    ASSESSMENT_CENTREEntities db = new ASSESSMENT_CENTREEntities();
+    //    protected void Page_Load(object sender, EventArgs e)
+    //    {
+
+    //        var clients = db.clients.ToList();
+    //        List<string> names = new List<string>();
+    //        foreach (var item in clients)
+    //        {
+    //            var id = item.client_id;
+    //            var first = item.first_name;
+    //            var last = item.surname;
+    //            var name = id + ":" + first + " " + last;
+    //            names.Add(name);
+    //           
+    //        }
+
+     //DropDownList1.SelectedIndexChanged += new EventHandler(DropDownList1_SelectedIndexChanged);
+
+
+    //        DropDownList1.DataSource = names;
+    //        DropDownList1.DataBind();
+
+
+
+
+    //    }
+    //    void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+    //    {
+    //        var temp = DropDownList1.SelectedValue;
+    //        var split = temp.Split(':');
+    //        var id = Convert.ToInt32(split[0]);
+
+    //        var cars = db.cars.Where(m => m.client_id == id).ToList();
+    //        var total = cars.Count();
+    //        totalLabel.Text = Convert.ToString(total);
+    //        GridView1.DataSource = cars;
+    //        GridView1.DataBind();
+    //    }
+    //}
+
+    //<form id="form1" runat="server">
+    //<div>
+    //    <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
+
+    //    <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+    //    <table border="1">
+           
+    //        <tr>
+    //            <td>
+    //                <asp:Label ID="btnTestCase3" runat="server" Text="Total cars "    />
+    //            </td>
+    //            <td>
+    //                <asp:Label ID="totalLabel" runat="server" Text=""></asp:Label>
+    //            </td>
+    //        </tr>
+
+             
+    //    </table>
+    //</div>
+    //</form>
+
     [Authorize]
    
     public class AccountController : Controller
