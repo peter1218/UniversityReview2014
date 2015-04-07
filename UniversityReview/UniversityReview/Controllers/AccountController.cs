@@ -13,6 +13,24 @@ using UniversityReview.Models;
 
 namespace UniversityReview.Controllers
 {
+//    SELECT * FROM client where client_id NOT IN (SELECT A.client_id 
+//FROM client as A
+//JOIN car as B
+//ON A.client_id=B.client_id)
+
+
+//SELECT * FROM client WHERE client_id in 
+//(select A.client_id from (select client_id, count(client_id) as ClientCount from car
+//group by client_id) AS A where 
+//ClientCount > 2)
+
+
+
+//SELECT * FROM client WHERE  datepart(d, date_of_birth) = datepart(d, getdate()) and
+//  datepart(m, date_of_birth) = datepart(m, getdate())and is_vip=1
+
+
+
     [Authorize]
    
     public class AccountController : Controller
